@@ -1,8 +1,8 @@
 {
-  "minSupportedVersion": "1.9-Aurora-16",
-  "latestVersion": "1.9-Aurora-16",
+  "minSupportedVersion": "1.9-Aurora-17",
+  "latestVersion": "1.9-Aurora-17",
   "downloadUrl": "https://github.com/Yieyuqwqs/Yieyu-Update/releases/latest",
-  "message": "Yieyu Aurora-16 Final：灵动岛用 RN 弹簧动画重构（顶部居中 / 不可拖拽 / 纯黑 35dp / 点击展开大卡片 / 左右滑切歌 / 长按回主页），设置页重排为【核心声学引擎】【极光视界】【极速闪传】【安全与更新】四大模块。低于 Aurora-16 的版本必须更新后继续使用。",
-  "versionCode": 21,
-  "minVersionCode": 21
+  "message": "Yieyu Aurora-17 热修：修掉打开 App 就弹的 Fatal Invariant Violation 红字（灵动岛弹簧动画 tension/friction 与 mass 两套参数族混用）。只改了灵动岛动画参数，音频底层与强更逻辑零改动。低于 Aurora-17 的版本必须更新后继续使用。",
+  "versionCode": 22,
+  "minVersionCode": 22
 }
