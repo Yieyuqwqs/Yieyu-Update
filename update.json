@@ -1,8 +1,8 @@
 {
-  "minSupportedVersion": "1.9-Aurora-14",
-  "latestVersion": "1.9-Aurora-14",
+  "minSupportedVersion": "1.9-Aurora-15",
+  "latestVersion": "1.9-Aurora-15",
   "downloadUrl": "https://github.com/Yieyuqwqs/Yieyu-Update/releases/latest",
-  "message": "Yieyu Aurora-14：音效面板顶部采样率改读原生实际输出（开启 Hi-Res 显示 96/192kHz）+ 强制更新死锁弹窗找回 + 设置页全局排版精修。低于 Aurora-14 的版本必须更新后继续使用。",
-  "versionCode": 19,
-  "minVersionCode": 19
+  "message": "Yieyu Aurora-15：Hi-Res 升频高负载闪退修复（动态缓冲 + 插值核减半负载 + 192→96→48 静默降级链 + 3 秒冷链冷却 + 看门狗静默）。低于 Aurora-15 的版本必须更新后继续使用。",
+  "versionCode": 20,
+  "minVersionCode": 20
 }
