@@ -1,8 +1,8 @@
 {
-  "minSupportedVersion": "1.9-Aurora-25",
-  "latestVersion": "1.9-Aurora-25",
+  "minSupportedVersion": "1.9-Aurora-26",
+  "latestVersion": "1.9-Aurora-26",
   "downloadUrl": "https://github.com/Yieyuqwqs/Yieyu-Update/releases/latest",
-  "message": "Yieyu 1.9-Aurora-25（Final 修复版）：修好星光跳动逐字歌词不显示（歌词行时间戳是毫秒、时钟是秒，Aurora-24 单位错位导致亮字层永不触发）；动态背景图下改按深色底算歌词配色，当前行稳定白字；当前行底层先铺\"主色×0.55\"并加粗，动效关掉也绝不瞎眼；时钟自愈不会整体冻住。动效依旧全部在 UI 线程。音频底层与强更逻辑零改动。低于 1.9-Aurora-25 的版本必须更新后继续使用。",
-  "versionCode": 30,
-  "minVersionCode": 30
+  "message": "Yieyu 1.9-Aurora-26（Final）：新增蓝牙模式 —— 连上蓝牙耳机自动关掉 Hi-Res 升频与 offload（避免 44.1→192→48 的两次重采样），并自动给歌词加 -175ms 延迟补偿（蓝牙链路延迟导致歌词抢拍），可 ±25ms 微调；设置 · Hi-Fi 解析中枢新增【蓝牙高音质与同步】卡片，含设备状态、自动优化开关、补偿微调与开发者选项入口。Android 出于权限限制不允许 App 直接切换 LDAC/aptX，编码器仍需在开发者选项里选。音频底层与强更逻辑零改动。低于 1.9-Aurora-26 的版本必须更新后继续使用。",
+  "versionCode": 31,
+  "minVersionCode": 31
 }
