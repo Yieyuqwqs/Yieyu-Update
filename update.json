@@ -1,8 +1,8 @@
 {
-  "minSupportedVersion": "1.9-Aurora-22",
-  "latestVersion": "1.9-Aurora-22",
+  "minSupportedVersion": "1.9-Aurora-23",
+  "latestVersion": "1.9-Aurora-23",
   "downloadUrl": "https://github.com/Yieyuqwqs/Yieyu-Update/releases/latest",
-  "message": "Yieyu Aurora-17 热修：修掉打开 App 就弹的 Fatal Invariant Violation 红字（灵动岛弹簧动画 tension/friction 与 mass 两套参数族混用）。只改了灵动岛动画参数，音频底层与强更逻辑零改动。低于 Aurora-22 的版本必须更新后继续使用。",
-  "versionCode": 27,
-  "minVersionCode": 27
+  "message": "Yieyu 1.9-Aurora-23（Final）：歌词自动对比度上线（亮底黑字 / 暗底白字，怎么调主题都清晰）；CI 推代码即自动发版公库；清掉原生悬浮窗残留与无用代码。音频底层与强更逻辑零改动。低于 1.9-Aurora-23 的版本必须更新后继续使用。",
+  "versionCode": 28,
+  "minVersionCode": 28
 }
