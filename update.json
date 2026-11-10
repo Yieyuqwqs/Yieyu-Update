@@ -1,8 +1,8 @@
 {
-  "minSupportedVersion": "1.9-Aurora-28",
-  "latestVersion": "1.9-Aurora-28",
+  "minSupportedVersion": "1.9-Aurora-29",
+  "latestVersion": "1.9-Aurora-29",
   "downloadUrl": "https://github.com/Yieyuqwqs/Yieyu-Update/releases/latest",
-  "message": "Yieyu 1.9-Aurora-28：31 段均衡器交互重做 —— 横向进度条卡片（一排 3 个多，左右滑切频段）+ 长按 0.2 秒解锁防误触（发光+轻震，松手锁回），上面曲线固定不动、圆点实时联动，点圆点可跳到对应卡片；新增撤销/平滑。C++ 内核与音频链路未改动。低于 1.9-Aurora-28 的版本必须更新后继续使用。",
-  "versionCode": 33,
-  "minVersionCode": 33
+  "message": "Yieyu 1.9-Aurora-29：新增【模拟黑胶 / 胆机】味精模块（纯 C++ 实时算法，零采样音频）—— ① 胆机软削波：偏置 tanh，实测 1kHz 下 2 次谐波比 3 次高 8.9dB，THD 随加量 11%→33% 单调；② 黑胶底噪：白噪塑形嘶声 + 泊松颗粒（重尾幅度，峰度 22）；③ 肉摇 Wow&Flutter：0.55/1.1/9.7Hz 三路 + 6 点 Lagrange 分数延迟，pitch 预算 0.35%。一根「味精加量」滑块 + 淡/香/醉三档 + 三个子开关 + 高保真 4× 过采样；4 倍过采样 + 一阶 ADAA 把听觉频段非谐波压到 -64~-75dB。插入在混响与直流阻断之后、头追与限幅之前。低于 1.9-Aurora-29 的版本必须更新后继续使用。",
+  "versionCode": 34,
+  "minVersionCode": 34
 }
