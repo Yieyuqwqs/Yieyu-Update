@@ -1,8 +1,8 @@
 {
-  "minSupportedVersion": "1.9-Aurora-26",
-  "latestVersion": "1.9-Aurora-26",
+  "minSupportedVersion": "1.9-Aurora-27",
+  "latestVersion": "1.9-Aurora-27",
   "downloadUrl": "https://github.com/Yieyuqwqs/Yieyu-Update/releases/latest",
-  "message": "Yieyu 1.9-Aurora-26（Final）：新增蓝牙模式 —— 连上蓝牙耳机自动关掉 Hi-Res 升频与 offload（避免 44.1→192→48 的两次重采样），并自动给歌词加 -175ms 延迟补偿（蓝牙链路延迟导致歌词抢拍），可 ±25ms 微调；设置 · Hi-Fi 解析中枢新增【蓝牙高音质与同步】卡片，含设备状态、自动优化开关、补偿微调与开发者选项入口。Android 出于权限限制不允许 App 直接切换 LDAC/aptX，编码器仍需在开发者选项里选。音频底层与强更逻辑零改动。低于 1.9-Aurora-26 的版本必须更新后继续使用。",
-  "versionCode": 31,
-  "minVersionCode": 31
+  "message": "Yieyu 1.9-Aurora-27：31 段（三分之一倍频程）均衡器，DSP 由 C++ 内核处理（新增 android/sound-effects/src/main/cpp/{eq31.h,eq31_jni.cpp} 与 Eq31.java）。UI 是可拖拽的曲线（划线调音/拖点微调/长按归零），三挡开关「关 / 十段 / 31 段」可随时降级或直关；开关与 10↔31 切换全部走干湿交叉淡变，增益在 dB 域平滑、系数按 32 帧重算，频段归零后保留真实系数让状态自然衰减（不再硬换恒等 = 不再有「啪」声）；新增自动预衰减按曲线实际叠加量压制峰值。原生不可用时自动退回 Java 十段。低于 1.9-Aurora-27 的版本必须更新后继续使用。",
+  "versionCode": 32,
+  "minVersionCode": 32
 }
