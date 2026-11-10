@@ -1,8 +1,8 @@
 {
-  "minSupportedVersion": "1.9-Aurora-17",
-  "latestVersion": "1.9-Aurora-17",
+  "minSupportedVersion": "1.9-Aurora-22",
+  "latestVersion": "1.9-Aurora-22",
   "downloadUrl": "https://github.com/Yieyuqwqs/Yieyu-Update/releases/latest",
-  "message": "Yieyu Aurora-17 热修：修掉打开 App 就弹的 Fatal Invariant Violation 红字（灵动岛弹簧动画 tension/friction 与 mass 两套参数族混用）。只改了灵动岛动画参数，音频底层与强更逻辑零改动。低于 Aurora-17 的版本必须更新后继续使用。",
-  "versionCode": 22,
-  "minVersionCode": 22
+  "message": "Yieyu Aurora-17 热修：修掉打开 App 就弹的 Fatal Invariant Violation 红字（灵动岛弹簧动画 tension/friction 与 mass 两套参数族混用）。只改了灵动岛动画参数，音频底层与强更逻辑零改动。低于 Aurora-22 的版本必须更新后继续使用。",
+  "versionCode": 27,
+  "minVersionCode": 27
 }
