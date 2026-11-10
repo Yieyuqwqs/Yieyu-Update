@@ -1,8 +1,8 @@
 {
-  "minSupportedVersion": "1.9-Aurora-24",
-  "latestVersion": "1.9-Aurora-24",
+  "minSupportedVersion": "1.9-Aurora-25",
+  "latestVersion": "1.9-Aurora-25",
   "downloadUrl": "https://github.com/Yieyuqwqs/Yieyu-Update/releases/latest",
-  "message": "Yieyu 1.9-Aurora-24（Final 终极版）：播放页「星光跳动」逐字歌词 —— 唱到哪个字就跳起放大并带星光光晕，上一个字平滑落回压暗，当前行加粗、上下行半透明、描边兜底防瞎眼；设置页新增【Hi-Fi 解析中枢】（局域网传歌 / Hi-Res 升频 / CUE 分轨）；歌词颜色可自定义；灵动岛已物理清除。逐字动效全部在 UI 线程，音频底层与强更逻辑零改动。低于 1.9-Aurora-24 的版本必须更新后继续使用。",
-  "versionCode": 29,
-  "minVersionCode": 29
+  "message": "Yieyu 1.9-Aurora-25（Final 修复版）：修好星光跳动逐字歌词不显示（歌词行时间戳是毫秒、时钟是秒，Aurora-24 单位错位导致亮字层永不触发）；动态背景图下改按深色底算歌词配色，当前行稳定白字；当前行底层先铺\"主色×0.55\"并加粗，动效关掉也绝不瞎眼；时钟自愈不会整体冻住。动效依旧全部在 UI 线程。音频底层与强更逻辑零改动。低于 1.9-Aurora-25 的版本必须更新后继续使用。",
+  "versionCode": 30,
+  "minVersionCode": 30
 }
