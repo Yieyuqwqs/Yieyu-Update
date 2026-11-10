@@ -1,8 +1,8 @@
 {
-  "minSupportedVersion": "1.9-Aurora-27",
-  "latestVersion": "1.9-Aurora-27",
+  "minSupportedVersion": "1.9-Aurora-28",
+  "latestVersion": "1.9-Aurora-28",
   "downloadUrl": "https://github.com/Yieyuqwqs/Yieyu-Update/releases/latest",
-  "message": "Yieyu 1.9-Aurora-27：31 段（三分之一倍频程）均衡器，DSP 由 C++ 内核处理（新增 android/sound-effects/src/main/cpp/{eq31.h,eq31_jni.cpp} 与 Eq31.java）。UI 是可拖拽的曲线（划线调音/拖点微调/长按归零），三挡开关「关 / 十段 / 31 段」可随时降级或直关；开关与 10↔31 切换全部走干湿交叉淡变，增益在 dB 域平滑、系数按 32 帧重算，频段归零后保留真实系数让状态自然衰减（不再硬换恒等 = 不再有「啪」声）；新增自动预衰减按曲线实际叠加量压制峰值。原生不可用时自动退回 Java 十段。低于 1.9-Aurora-27 的版本必须更新后继续使用。",
-  "versionCode": 32,
-  "minVersionCode": 32
+  "message": "Yieyu 1.9-Aurora-28：31 段均衡器交互重做 —— 横向进度条卡片（一排 3 个多，左右滑切频段）+ 长按 0.2 秒解锁防误触（发光+轻震，松手锁回），上面曲线固定不动、圆点实时联动，点圆点可跳到对应卡片；新增撤销/平滑。C++ 内核与音频链路未改动。低于 1.9-Aurora-28 的版本必须更新后继续使用。",
+  "versionCode": 33,
+  "minVersionCode": 33
 }
