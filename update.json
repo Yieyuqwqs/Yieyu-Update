@@ -1,8 +1,8 @@
 {
-  "minSupportedVersion": "1.9-Aurora-51",
-  "latestVersion": "1.9-Aurora-51",
+  "minSupportedVersion": "1.9-Aurora-53",
+  "latestVersion": "1.9-Aurora-53",
   "downloadUrl": "https://github.com/Yieyuqwqs/Yieyu-Update/releases/latest",
-  "message": "perf(bridge): Aurora-51 —— C++ 侧高频事件节流（core.state 上限 10Hz）\n\n老板第二招落地：高频数据在 C++ 底层就做节流，每秒最多推 10 次，绝不把 JS 线程淹死。\n\n· src/core-bridge/state.ts：core.state 订阅加 10Hz 上限（Runtime::emitLocked 里按 topic 限频，\n  超频事件直接丢弃并计入 eventsThrottled，JS 侧零成本）；\n· 其余高频（进度）本就 1Hz，不需要再动。\n\n说明：Aurora-51 只发这一条（最小可验证改动）；预加载秒切 + 原生 CoreRealtimeView 底座\n排在本轮后续提交，见 HANDOFF 9.6。\n\n版本 1.9-Aurora-51 / versionCode 56",
-  "versionCode": 56,
-  "minVersionCode": 56
+  "message": "fix(userApi): Aurora-53 —— 自定义源初始化丢事件自愈\n\n背景：init 事件由脚本自己上报，原生侧 inited 是一次性守卫 —— 只要那条事件在\nJS 监听器就绪前丢掉一次（换源/热重载/bridge 未就绪），就永远补不回来，\n表现＝永久「初始化中」＋门控永挂。\n\n修法：\n· QuickJS.loadScript 开头重置 inited（会话级而非实例级）；\n· apiSource 超时兜底：判失败前先自动重载脚本一次（偶发丢事件自愈），\n  重载后仍无 init 才判失败 + 自动切回内置源 + 提示；\n· 配 Aurora-49 的 8s 看门狗/门控前置/硬超时，初始化链路不再有任何无限等待。\n\n版本 1.9-Aurora-53 / versionCode 58",
+  "versionCode": 58,
+  "minVersionCode": 58
 }
