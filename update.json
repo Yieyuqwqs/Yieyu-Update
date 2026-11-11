@@ -1,8 +1,8 @@
 {
-  "minSupportedVersion": "1.9-Aurora-53",
-  "latestVersion": "1.9-Aurora-53",
+  "minSupportedVersion": "1.9-Aurora-54",
+  "latestVersion": "1.9-Aurora-54",
   "downloadUrl": "https://github.com/Yieyuqwqs/Yieyu-Update/releases/latest",
-  "message": "fix(userApi): Aurora-53 —— 自定义源初始化丢事件自愈\n\n背景：init 事件由脚本自己上报，原生侧 inited 是一次性守卫 —— 只要那条事件在\nJS 监听器就绪前丢掉一次（换源/热重载/bridge 未就绪），就永远补不回来，\n表现＝永久「初始化中」＋门控永挂。\n\n修法：\n· QuickJS.loadScript 开头重置 inited（会话级而非实例级）；\n· apiSource 超时兜底：判失败前先自动重载脚本一次（偶发丢事件自愈），\n  重载后仍无 init 才判失败 + 自动切回内置源 + 提示；\n· 配 Aurora-49 的 8s 看门狗/门控前置/硬超时，初始化链路不再有任何无限等待。\n\n版本 1.9-Aurora-53 / versionCode 58",
-  "versionCode": 58,
-  "minVersionCode": 58
+  "message": "chore(core): Aurora-54 —— M6 死代码清理（4 条跨语言死路径）+ 语言统计收尾\n\n一版一主题：这一版只删死代码、不动任何在用的逻辑。\n\n【C++ 侧删除的 4 条死路径】\n· op kv.flush：JS 侧从来没有调用点（在池分发和 KV 分支里各挂一处，从来没进来过）；\n· op state.clear：同样没有 JS 调用点，属于 M2 遗留的「声明了但没人用」；\n· net.request 的 pin 字段：C++ 读出来以后立刻 (void) 丢弃（pin 只认 license/net_pins.h 白名单），\n  属于死读 —— 删掉之后 JS 与 C++ 的字段契约才对得上；\n· license.ban.check：池分发条件里挂着这个名字，但 handleAsync 里从来没有对应分支，\n  真发进来只会落 UNKNOWN_ASYNC_OP（M4-3 尚未实现），先删名字，等 M4-3 一起加。\n· 连带：SqliteStore::compact() 与 StateBox::clear() 失去唯一调用方，一并删除。\n  WAL 由 SQLite 自己按 1000 页自动 checkpoint，不需要手动 VACUUM 入口。\n\n【语言统计】\n· .gitattributes 第二轮收紧：*.yml / *.yaml / .github/** / *.gradle / *.m / *.mm / *.pro /\n  *.properties / *.code-snippets 全部 linguist-vendored；\n· 只标记，不删任何构建脚本和依赖（老板的硬要求）。\n\n【本地门禁（工具不在仓库里，说明一下为什么值得记一笔）】\n· 前一会话留下的 qa/ops.js v2.1 与 qa/gate.js v1 有一个共同的假绿根因：\n  排除目录时用绝对路径匹配 /(node_modules|\\.git)/，而本机 HOME 是\n  /data/user/0/io.github.jackwener.dsh/…，包名里的 .github 含 .git，\n  于是 src 下所有子目录被跳过 —— 688 个文件只扫到 2 个，报「JS 调用点: 0」。\n· 重写后：ops.js v3 六条 op 全 ✓、不一致 0、JS 调用点 12；\n  gate.js v2 三段（裸 await 棘轮 / JNI 双向对齐 / C++·Java 括号体检），全绿。\n\n版本 1.9-Aurora-54 / versionCode 59",
+  "versionCode": 59,
+  "minVersionCode": 59
 }
