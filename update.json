@@ -1,8 +1,8 @@
 {
-  "minSupportedVersion": "1.9-Aurora-50",
-  "latestVersion": "1.9-Aurora-50",
+  "minSupportedVersion": "1.9-Aurora-51",
+  "latestVersion": "1.9-Aurora-51",
   "downloadUrl": "https://github.com/Yieyuqwqs/Yieyu-Update/releases/latest",
-  "message": "feat(net,core): Aurora-50 —— M4-4：C++ 原生网络出口 + SSL 证书固定\n\n【架构定调（老板拍板）】TS 不再拥有核心请求的网络权限：发起权在 C++，JS 只能「要什么」。\n\n【一、C++ 网络出口（新增）】\n· android/core/.../HttpBridge.java：平台 HTTP/TLS 传输（HttpsURLConnection），\n  同步执行、只在 pool worker 线程跑；连接/读取超时、4MB 硬上限、UTF-8 流式读取；\n· cpp/jni/http_bridge.{h,cpp}：JniThreadScope 包裹的 JNI 反调 + GlobalRef 绑定/释放，\n  与 JavaCrypto 同一套生命周期（startLocked 绑定 → stop 里在 join 完之后 unbind，计数可回 0）；\n· cpp/runtime：新 op `net.request` 走**后台线程池**（Aurora-48 的池子），命令线程只路由；\n  队列满/出口未绑 → 立刻回 BUSY / NET_UNAVAILABLE，绝不让 JS 悬着；\n· 统计新增 netRequests / netFails / netPinMiss / netReady（关于页可见）。\n\n【二、SSL 证书固定（SPKI SHA-256）】\n· 白名单唯一副本在 cpp/license/net_pins.h；JS 传来的 pin 字段一律忽略（前端关不掉校验）；\n· 握手完成后立刻比对叶子证书 SPKI，不匹配直接 PIN_MISMATCH、**不返回 body**；\n· 返回里带 observedSpki：先抓真机一次，把 64 位 hex 填进 net_pins.h 再开强制校验 ——\n  绝不拍脑袋 pin 死导致强更/黑名单失效。\n\n【三、接线（都保留 fetch 兜底，红线：付费用户不能被锁在外面）】\n· src/core/license.ts：云端黑名单改走 coreNetJson（2MB 上限、3.5s 预算）；\n· src/utils/version.js：强更检查（direct / npm 两种源）优先走原生；\n· src/core/net/index.ts：JS 侧唯一门面（coreNetFetch / coreNetJson / getLastObservedSpki）。\n\n【四、顺手】\n· foregroundSync 的 getPosition/getDuration 加 1.5s 超时：防止一次不响应把 inFlight 永久卡住；\n· 关于页自检行追加原生网络指标。\n\n版本 1.9-Aurora-50 / versionCode 55",
-  "versionCode": 55,
-  "minVersionCode": 55
+  "message": "perf(bridge): Aurora-51 —— C++ 侧高频事件节流（core.state 上限 10Hz）\n\n老板第二招落地：高频数据在 C++ 底层就做节流，每秒最多推 10 次，绝不把 JS 线程淹死。\n\n· src/core-bridge/state.ts：core.state 订阅加 10Hz 上限（Runtime::emitLocked 里按 topic 限频，\n  超频事件直接丢弃并计入 eventsThrottled，JS 侧零成本）；\n· 其余高频（进度）本就 1Hz，不需要再动。\n\n说明：Aurora-51 只发这一条（最小可验证改动）；预加载秒切 + 原生 CoreRealtimeView 底座\n排在本轮后续提交，见 HANDOFF 9.6。\n\n版本 1.9-Aurora-51 / versionCode 56",
+  "versionCode": 56,
+  "minVersionCode": 56
 }
