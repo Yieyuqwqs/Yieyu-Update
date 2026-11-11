@@ -1,8 +1,8 @@
 {
-  "minSupportedVersion": "1.9-Aurora-36",
-  "latestVersion": "1.9-Aurora-36",
+  "minSupportedVersion": "1.9-Aurora-37",
+  "latestVersion": "1.9-Aurora-37",
   "downloadUrl": "https://github.com/Yieyuqwqs/Yieyu-Update/releases/latest",
   "message": "Yieyu Aurora-31：M0 地基 —— Fat Core 开工（只加不改）\n\n新增 android/core 原生库（libyieyu_core.so）+ RN 门面 YieyuCore：\n  · post：单向命令，JNI 入口 <0.5ms 返回，只做拷贝+入队；\n  · request：一次性应答，Java 侧 3s 硬超时，绝不留下悬挂的 Promise；\n  · onEvent：C++ 只有一个 core-disp 出口线程，事件按 topic 限频，\n    队列有界（命令 256 / 事件 1024），满了覆盖式丢旧而不是无限堆积。\n\n内存红线相关：宿主用 GlobalRef 持有并计数，RN reload 时检测到宿主变化会\n整块作废重建（generation 自增），避免继续回调已死的 ReactContext。\n\n自审阶段修掉两个真实缺陷：\n  1. stop() 原先持 hostMutex_ 去 join 线程，而 deliver() 也要拿这把锁 → 必死锁；\n  2. stats() 读取命令队列长度未加锁 → 数据竞争。\n\n本轮只加不改：播放引擎、音效链路、头追 HRTF、看门狗、强更逻辑一行未动。\n设置→关于 新增一行「核心自检」，显示版本/往返耗时/队列/GlobalRef 计数。\n\n版本 1.9-Aurora-31 / versionCode 36",
-  "versionCode": 41,
-  "minVersionCode": 41
+  "versionCode": 42,
+  "minVersionCode": 42
 }
