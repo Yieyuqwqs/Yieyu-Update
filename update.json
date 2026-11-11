@@ -1,8 +1,8 @@
 {
-  "minSupportedVersion": "1.9-Aurora-29",
-  "latestVersion": "1.9-Aurora-29",
+  "minSupportedVersion": "1.9-Aurora-30",
+  "latestVersion": "1.9-Aurora-30",
   "downloadUrl": "https://github.com/Yieyuqwqs/Yieyu-Update/releases/latest",
-  "message": "Yieyu 1.9-Aurora-29：新增【模拟黑胶 / 胆机】味精模块（纯 C++ 实时算法，零采样音频）—— ① 胆机软削波：偏置 tanh，实测 1kHz 下 2 次谐波比 3 次高 8.9dB，THD 随加量 11%→33% 单调；② 黑胶底噪：白噪塑形嘶声 + 泊松颗粒（重尾幅度，峰度 22）；③ 肉摇 Wow&Flutter：0.55/1.1/9.7Hz 三路 + 6 点 Lagrange 分数延迟，pitch 预算 0.35%。一根「味精加量」滑块 + 淡/香/醉三档 + 三个子开关 + 高保真 4× 过采样；4 倍过采样 + 一阶 ADAA 把听觉频段非谐波压到 -64~-75dB。插入在混响与直流阻断之后、头追与限幅之前。低于 1.9-Aurora-29 的版本必须更新后继续使用。",
-  "versionCode": 34,
-  "minVersionCode": 34
+  "message": "Yieyu Aurora-30：修蓝牙耳机下胆机软削波的「滋滋」毛刺 —— 在味精模块输出端强制挂 16kHz 陡峭低通（Butterworth 级联，44.1/48k 12 阶 / 96k 20 阶 / 192k 32 阶，双精度状态）：实测 15kHz 一阶不动，17kHz -21dB，18kHz -45.6dB，20kHz -86.7dB。低通常驻运行 + 20ms 交叉淡变，开关切换不爆音。另：ADAA 的 1e-7 阈值只是数值兜底，不是音质旋钮，已说明。新增「16kHz 低通（蓝牙防毛刺）」开关，默认开。低于 Aurora-30 的版本必须更新后继续使用。",
+  "versionCode": 35,
+  "minVersionCode": 35
 }
