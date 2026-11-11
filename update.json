@@ -1,8 +1,8 @@
 {
-  "minSupportedVersion": "1.9-Aurora-45",
-  "latestVersion": "1.9-Aurora-45",
+  "minSupportedVersion": "1.9-Aurora-46",
+  "latestVersion": "1.9-Aurora-46",
   "downloadUrl": "https://github.com/Yieyuqwqs/Yieyu-Update/releases/latest",
-  "message": "Yieyu Aurora-45：卡密验签搬进原生层（密钥不再进 JS 包）\n\n· 卡密校验（旧版 RSA 长卡 + 16 位短卡）全部在 C++ 里判，密码学实现走 JNI 反调\n  Java（JCA）：C++ 不引第三方密码库，也不手写大数求幂。\n· 公钥 / 对称密钥只保留一份，在原生层（license_keys.h）；JS 侧的 licenseKey.ts 已删除，\n  客户端 JS 包里从此没有任何密钥（CI 新增硬断言，出现即构建失败）。\n· 关于页自检多一项「加密桥 ✓/✗ · 验签 N」，装机后一眼看出验签是不是真在原生层跑。\n· 激活路径：核心不可用时会明确提示「验签服务暂不可用，请重启应用后重试」，\n  绝不静默放行，也不会误判成「卡密无效」。\n· 付费用户不受影响：已激活的授权仍走原有 evaluate()（到期 / 时钟回拨 / 封禁），\n  本地兜底放行逻辑一行未改。\n· 顺带放宽卡密输入：全角字符、复制时带的 BOM / 零宽字符不再被判「格式不正确」。\n\n版本 1.9-Aurora-45 / versionCode 50",
-  "versionCode": 50,
-  "minVersionCode": 50
+  "message": "Yieyu Aurora-46：热修两个状态同步 Bug（启动误拦截 + 回前台显示暂停）\n\n【Bug1 冷启动被拦在激活页】\n· 根因：启动时 evaluate() 是 fire-and-forget，路由决策读到的还是初始状态 none，\n  于是 setRoot 到授权页；等判定变成 active 之后没有任何「放行」逻辑，付费用户只能手点。\n· 修法：启动顺序改为「Loading 闪屏 → 本地同步判定 → C++ 权威判定 → 才路由」，\n  新增 BootSplash 闪屏；订阅 C++ 的 license.state 事件，原生层放行/收回即时生效\n  （判定为 active 会自动回主界面）；本地缓存授权记录优先同步读取，首帧即正确，不等网络。\n\n【Bug2 切后台回来 UI 画成暂停（其实还在放）】\n· 根因：切后台期间 player 状态无人刷新，回前台按默认值重画。\n· 修法：回到前台时主动向 C++ 要一次 player 全量快照覆盖镜像；C++ 侧同时在\n  setForeground(true) 主动强推 core.state(player)。进度仍以本地为准（不回灌）。\n\n版本 1.9-Aurora-46 / versionCode 51",
+  "versionCode": 51,
+  "minVersionCode": 51
 }
