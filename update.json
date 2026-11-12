@@ -1,8 +1,8 @@
 {
-  "minSupportedVersion": "1.9-Aurora-58",
-  "latestVersion": "1.9-Aurora-58",
+  "minSupportedVersion": "1.9-Aurora-59",
+  "latestVersion": "1.9-Aurora-59",
   "downloadUrl": "https://github.com/Yieyuqwqs/Yieyu-Update/releases/latest",
-  "message": "chore(core): Aurora-58 —— 清掉 net.request 下线后的残留预算分支\n\n网络出口在 Aurora-56/57 已经整体剥离，但两个门面里还留着专为它写的死分支：\n\n· src/core-bridge/index.ts：request() 里「op === 'net.request' 时按 payload.timeoutMs 放宽到 18s」\n  的预算计算，连同 payloadTimeout 变量一起删；所有 op 统一 4s；\n· CoreModule.java：NET_REQUEST_TIMEOUT_MS = 20000L 常量与 \"net.request\".equals(op) 分支删除，\n  统一 REQUEST_TIMEOUT_MS = 3000L。\n\n三道截止依然完整：C++ 300ms 看门狗（pending 表）→ Java 3s 兜底 → JS 4s。\n纯清理，不改任何在用行为。\n\n版本 1.9-Aurora-58 / versionCode 63",
-  "versionCode": 63,
-  "minVersionCode": 63
+  "message": "refactor(source): Aurora-59 —— 去暴政化：网络全交 TS，删掉所有强制切割/暴力看门狗\n\n老板拍板：网络已经回前端了，底层不要再插手，还原 M3 的顺滑体验。\n\n【一、自定义源初始化：看门狗整块删除（src/core/apiSource.ts）】\n以前（为了兜住「C++ 网络死锁」）这里是：8s 强判失败 → 自动重载脚本 → 再 6s 判失败 →\n彻底退回内置源 + destroyUserApi。现在**全部删除**：\n· 不再 8 秒强行掐断；\n· 不再自动重载脚本（强制重拉）；\n· 不再自动切回内置源（暴力覆盖用户的选择）；\n· 不再销毁脚本环境。\n门控 apiInitPromise 仍然只在「脚本真的发 init」或「setUserApi 失败」时结算 ——\n完全是 M3 的行为：脚本自己卡住，就由它自己的网络超时暴露，UI 只如实显示状态；\n用户想重试 = 在设置里再点一次音源（自然、无暴力）。\n\n【二、网络预算全面放宽（src/utils/withTimeout.ts）】\n· 音源就绪门控 5s → 30s；\n· 播放地址获取 8s → 25s；\n· 歌词 / 封面 8s → 20s；\n· 云端黑名单 3s → 8s（src/core/license.ts）。\n仍然保留「保险丝」含义：它不是强行掐断网络，而是防止 Promise 永久悬着把 UI 冻住。\n\n【三、清掉 C++ 侧最后一条网络痕迹】\nRuntime::request 里 op == \"net.request\" ? 25s : 8s 的特殊预算删除，\nkNetRequestTimeoutMs 常量删除，核心 op 统一 8s —— 这 8s 只防「核心真卡死」，与网络无关。\n\n【四、可见性（不暴力，但看得懂）】\n· src/core/init/userApi/request.js：网络代理改用 resolveFetch() 守卫，\n  global.fetch 不在时直接抛「前端网络不可用：global.fetch 不存在」，脚本不会无限等；\n· 设置 → 音源：失败时显示具体原因（[失败：xxx]），不再只有一个「失败」。\n\n【保留不动（与网络无关）】\n加密桥 / 卡密验签（license.verify、license.evaluate）、状态机 state_box、\nworker_pool、M5 震动内核、以及播放器「切后台回来」的前台重同步（那是修 UI 假暂停的，不是网络）。\n\n版本 1.9-Aurora-59 / versionCode 64",
+  "versionCode": 64,
+  "minVersionCode": 64
 }
