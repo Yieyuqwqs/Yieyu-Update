@@ -1,8 +1,8 @@
 {
-  "minSupportedVersion": "1.9-Aurora-57",
-  "latestVersion": "1.9-Aurora-57",
+  "minSupportedVersion": "1.9-Aurora-58",
+  "latestVersion": "1.9-Aurora-58",
   "downloadUrl": "https://github.com/Yieyuqwqs/Yieyu-Update/releases/latest",
-  "message": "fix(effects): Aurora-57 —— 修 C++ 编译错误（vibrator 窄化），承接 Aurora-56 全部内容\n\n【为什么有这一版】\nAurora-55 挂在 `#include \"hw/vibrator.h\"`（引号包含按本文件目录解析 → cpp/hw/hw/），\nAurora-56 修好 include 后，又挂在下一处：\n  hw/vibrator.h:78: error: type 'float' cannot be narrowed to 'int' in initializer list\n  hw/vibrator.h:79: error: type 'float' cannot be narrowed to 'int' in initializer list\n根因：Defaults 里 kLowpassHz / kHighpassHz 写成 float（60.0f / 20.0f），\n却直接拿来初始化 std::atomic<int> —— 列表初始化禁止窄化，clang 直接报错。\n修法：两个常量改成 int（60 / 20），setTuning 里多余的 static_cast 一并去掉。\n\n【本版内容 = Aurora-56（那次没出包）】\n· 网络回归 TS：删 jni/http_bridge.{h,cpp}、license/net_pins.h、op net.request、\n  java/HttpBridge.java + proguard keep、src/core/net/index.ts；\n  license.ts 云端黑名单改 fetch + withTimeout(3s) 单路；utils/version.js 强更检查回 httpGet；\n· 加密桥 / 卡密验签（license.verify、license.evaluate）/ 强更判定逻辑**一行未动**；\n· GlobalRef 拆成 grHost / grCrypto 分开记账，关于页显示「2(宿主1+加密1)」；\n· M5：hw/vibrator.{h,cpp} + haptic_jni.cpp，音频线程零 JNI，Java 兜底原样保留。\n\n【本地门禁】gate v2 三段全绿；ops.js 字段契约不一致 0（验收项改为 5 条，net.request 已按指令下线）。\n\n版本 1.9-Aurora-57 / versionCode 62",
-  "versionCode": 62,
-  "minVersionCode": 62
+  "message": "chore(core): Aurora-58 —— 清掉 net.request 下线后的残留预算分支\n\n网络出口在 Aurora-56/57 已经整体剥离，但两个门面里还留着专为它写的死分支：\n\n· src/core-bridge/index.ts：request() 里「op === 'net.request' 时按 payload.timeoutMs 放宽到 18s」\n  的预算计算，连同 payloadTimeout 变量一起删；所有 op 统一 4s；\n· CoreModule.java：NET_REQUEST_TIMEOUT_MS = 20000L 常量与 \"net.request\".equals(op) 分支删除，\n  统一 REQUEST_TIMEOUT_MS = 3000L。\n\n三道截止依然完整：C++ 300ms 看门狗（pending 表）→ Java 3s 兜底 → JS 4s。\n纯清理，不改任何在用行为。\n\n版本 1.9-Aurora-58 / versionCode 63",
+  "versionCode": 63,
+  "minVersionCode": 63
 }
