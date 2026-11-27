@@ -1,8 +1,8 @@
 {
   "minSupportedVersion": "1.9-Aurora-62",
-  "latestVersion": "1.9-Aurora-69",
+  "latestVersion": "1.9-Aurora-70",
   "downloadUrl": "https://github.com/Yieyuqwqs/Yieyu-Update/releases/latest",
-  "message": "修强制绑 QQ 的卡死：现在会直接显示「绑定 QQ 后使用」，填 QQ 绑定后即可继续使用。",
-  "versionCode": 74,
+  "message": "管理端修 409 写入冲突；设备码与 QQ 成对绑定，解析申请码自动回填设备码。",
+  "versionCode": 75,
   "minVersionCode": 67
 }
