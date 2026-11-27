@@ -1,14 +1,5 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-27T11:30:26.344Z",
-  "devices": [
-    {
-      "k": "2111aa6291ba6da6b479733daf5896ecb3cfbcc17f9e8dcb7e20fc8fa98c0e35",
-      "exp": null,
-      "at": "2026-11-27T11:27:54.104Z",
-      "qq": "930***58",
-      "qk": "f99c946999c438a194da91c7187433aa847014f644f99ddeeb7ee52d98ab6661",
-      "status": "approved"
-    }
-  ]
+  "updatedAt": "2026-11-27T11:31:50.421Z",
+  "devices": []
 }
