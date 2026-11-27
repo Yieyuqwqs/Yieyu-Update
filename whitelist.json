@@ -1,14 +1,14 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-27T11:36:25.553Z",
+  "updatedAt": "2026-11-27T11:39:41.585Z",
   "devices": [
     {
       "k": "b90e0a7c5120c3761c5b76cd1984c1aaac945dd967327e2e35dae79007020672",
       "exp": null,
-      "at": "2026-11-27T11:36:25.553Z",
+      "at": "2026-11-27T11:39:41.585Z",
       "qq": "231***90",
       "qk": "1470a01a03d67855b247e21e4864bf7a80760fcce4e8933dd36983b0b0140646",
-      "status": "approved"
+      "status": "pending"
     }
   ]
 }
