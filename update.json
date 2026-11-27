@@ -1,8 +1,8 @@
 {
   "minSupportedVersion": "1.9-Aurora-62",
-  "latestVersion": "1.9-Aurora-75",
+  "latestVersion": "1.9-Aurora-76",
   "downloadUrl": "https://github.com/Yieyuqwqs/Yieyu-Update/releases/latest",
-  "message": "报错说人话：换源/搜索失败会显示每个音源的真实原因；下载目录回退不再静默。",
-  "versionCode": 80,
+  "message": "安全加固：密钥只发一种、公网禁用明文 http、日志脱敏、不再内置默认密钥、管理端 Token 走 Keystore。",
+  "versionCode": 81,
   "minVersionCode": 67
 }
