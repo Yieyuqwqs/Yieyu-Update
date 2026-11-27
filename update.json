@@ -1,8 +1,8 @@
 {
   "minSupportedVersion": "1.9-Aurora-62",
-  "latestVersion": "1.9-Aurora-73",
+  "latestVersion": "1.9-Aurora-74",
   "downloadUrl": "https://github.com/Yieyuqwqs/Yieyu-Update/releases/latest",
-  "message": "修复：填了 QQ 点绑定仍提示「请填写 QQ」（依赖数组漏了 ensureQQ 导致的陈旧闭包）。",
-  "versionCode": 78,
+  "message": "修存储读旧值、音源探测卡顿、切歌不取消旧请求；启动更快、内存更省。",
+  "versionCode": 79,
   "minVersionCode": 67
 }
