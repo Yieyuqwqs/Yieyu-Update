@@ -1,8 +1,8 @@
 {
   "minSupportedVersion": "1.9-Aurora-62",
-  "latestVersion": "1.9-Aurora-77",
+  "latestVersion": "1.9-Aurora-78",
   "downloadUrl": "https://github.com/Yieyuqwqs/Yieyu-Update/releases/latest",
-  "message": "新增壁纸皮肤「雪见」（半透明玻璃面板）+ 全局字体（系统/衬线近楷体/细体）。",
-  "versionCode": 82,
+  "message": "正式包裁掉 console.log（warn/error 保留）；修恢复播放时「启动自动播放」不生效。",
+  "versionCode": 83,
   "minVersionCode": 67
 }
