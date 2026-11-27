@@ -1,8 +1,8 @@
 {
   "minSupportedVersion": "1.9-Aurora-62",
-  "latestVersion": "1.9-Aurora-64",
+  "latestVersion": "1.9-Aurora-65",
   "downloadUrl": "https://github.com/Yieyuqwqs/Yieyu-Update/releases/latest",
-  "message": "修复「软件更新」卡死：检查更新改走国内可直连的镜像（api.github.com + gh-proxy 反代），下载走加速地址；强制更新也改为 App 内下载。",
-  "versionCode": 69,
+  "message": "授权新增必填 QQ 号：填一次，以后换手机也要填同一个 QQ；被封禁的 QQ 换设备同样无法使用。",
+  "versionCode": 70,
   "minVersionCode": 67
 }
