@@ -1,8 +1,8 @@
 {
   "minSupportedVersion": "1.9-Aurora-62",
-  "latestVersion": "1.9-Aurora-72",
+  "latestVersion": "1.9-Aurora-73",
   "downloadUrl": "https://github.com/Yieyuqwqs/Yieyu-Update/releases/latest",
-  "message": "管理端去掉设备码栏（解析申请码自动带出）；云端读写加缓存与重试，操作明显更快。",
-  "versionCode": 77,
+  "message": "修复：填了 QQ 点绑定仍提示「请填写 QQ」（依赖数组漏了 ensureQQ 导致的陈旧闭包）。",
+  "versionCode": 78,
   "minVersionCode": 67
 }
