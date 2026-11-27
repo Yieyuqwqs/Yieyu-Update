@@ -1,8 +1,8 @@
 {
   "minSupportedVersion": "1.9-Aurora-62",
-  "latestVersion": "1.9-Aurora-68",
+  "latestVersion": "1.9-Aurora-69",
   "downloadUrl": "https://github.com/Yieyuqwqs/Yieyu-Update/releases/latest",
-  "message": "旧授权强制补绑 QQ：填 QQ、核对头像、绑定后即可继续使用；没绑 QQ 无法进入主界面。",
-  "versionCode": 73,
+  "message": "修强制绑 QQ 的卡死：现在会直接显示「绑定 QQ 后使用」，填 QQ 绑定后即可继续使用。",
+  "versionCode": 74,
   "minVersionCode": 67
 }
