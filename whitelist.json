@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-27T11:29:10.270Z",
+  "updatedAt": "2026-11-27T11:30:26.344Z",
   "devices": [
     {
       "k": "2111aa6291ba6da6b479733daf5896ecb3cfbcc17f9e8dcb7e20fc8fa98c0e35",
@@ -8,14 +8,6 @@
       "at": "2026-11-27T11:27:54.104Z",
       "qq": "930***58",
       "qk": "f99c946999c438a194da91c7187433aa847014f644f99ddeeb7ee52d98ab6661",
-      "status": "approved"
-    },
-    {
-      "k": "b90e0a7c5120c3761c5b76cd1984c1aaac945dd967327e2e35dae79007020672",
-      "exp": null,
-      "at": "2026-11-27T11:29:10.270Z",
-      "qq": "231***90",
-      "qk": "1470a01a03d67855b247e21e4864bf7a80760fcce4e8933dd36983b0b0140646",
       "status": "approved"
     }
   ]
