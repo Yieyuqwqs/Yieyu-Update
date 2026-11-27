@@ -1,8 +1,8 @@
 {
   "minSupportedVersion": "1.9-Aurora-62",
-  "latestVersion": "1.9-Aurora-62",
+  "latestVersion": "1.9-Aurora-64",
   "downloadUrl": "https://github.com/Yieyuqwqs/Yieyu-Update/releases/latest",
   "message": "revert: Aurora-62 —— 完全回退到 M3 最后一版（f2ad272），加密桥也删除\n\n老板指令：「完全回退到 M3，加密桥也删掉。」\n执行方式：新 commit 的 tree 直接以 f2ad272 的 tree 为基底，\n**只覆盖三个版本号文件**（package.json / update.json / publish/version.json），\n其余 900+ 个文件与 Aurora-39 逐字节一致。\n\n【本版删掉的（Aurora-61 里还留着的）】\n· 加密桥整块：cpp/jni/java_crypto.{h,cpp}、cpp/jni/jni_scope.h、\n  cpp/license/license_verify.{h,cpp}、cpp/license/license_keys.h、\n  java/.../CoreCrypto.java、proguard 的 -keep、op license.verify、scripts/gen-license-keys.js 的 key 导出；\n· 卡密验签回到 JS：src/utils/licenseCard.js + src/config/licenseKey.ts（公钥重新进仓库/进 bundle）；\n· 4 个 P0 热修同时作废：Aurora-40（state.patch 丢参）、Aurora-41（进度卡 00:00）、\n  Aurora-46（冷启动误拦激活页 + 闪屏 + 前台重同步底座）、Aurora-47（切后台回来显示暂停）。\n\n【本版恢复回来的（Aurora-61 删掉的 M3 文件）】\n· src/config/licenseKey.ts、.gitattributes、.github/workflows/soak.yml、\n  src/components/common/ScaledImage.tsx、src/screens/PlayDetail/components/ImmersiveBg.tsx、\n  src/utils/musicSdk/{kg/temp/musicSearch-new.js,kg/temp/songList-new.js,mg/temp/leaderboard-old.js}\n  （都是 A42/M6 清理时删/加的东西，回 M3 就都回来了）\n\n【已知代价（老板已认可「完全回退」）】\n切歌/seek 后进度卡 00:00；冷启动可能把已验证用户弹到激活页；\n切后台回来 UI 可能显示暂停；关于页可能「域 0/0」；M5 震动回到 Java 实现；\n无 withTimeout 契约（跨语言调用只靠 Java 3s / C++ 8s 兜底）。\n\n【本地门禁】ops.js 的 MUST 按 M3 口径（license.* 已从 C++ 删除）；\ngate.js 三段重跑并重定裸 await 基线（回 M3 后自然回升，不是新增技术债）。\n\n版本 1.9-Aurora-62 / versionCode 67",
-  "versionCode": 67,
+  "versionCode": 69,
   "minVersionCode": 67
 }
