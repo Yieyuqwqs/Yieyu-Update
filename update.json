@@ -1,8 +1,8 @@
 {
   "minSupportedVersion": "1.9-Aurora-62",
-  "latestVersion": "1.9-Aurora-76",
+  "latestVersion": "1.9-Aurora-77",
   "downloadUrl": "https://github.com/Yieyuqwqs/Yieyu-Update/releases/latest",
-  "message": "安全加固：密钥只发一种、公网禁用明文 http、日志脱敏、不再内置默认密钥、管理端 Token 走 Keystore。",
-  "versionCode": 81,
+  "message": "新增壁纸皮肤「雪见」（半透明玻璃面板）+ 全局字体（系统/衬线近楷体/细体）。",
+  "versionCode": 82,
   "minVersionCode": 67
 }
