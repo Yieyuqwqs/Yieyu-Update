@@ -1,8 +1,8 @@
 {
   "minSupportedVersion": "1.9-Aurora-62",
-  "latestVersion": "1.9-Aurora-70",
+  "latestVersion": "1.9-Aurora-72",
   "downloadUrl": "https://github.com/Yieyuqwqs/Yieyu-Update/releases/latest",
-  "message": "管理端修 409 写入冲突；设备码与 QQ 成对绑定，解析申请码自动回填设备码。",
-  "versionCode": 75,
+  "message": "管理端去掉设备码栏（解析申请码自动带出）；云端读写加缓存与重试，操作明显更快。",
+  "versionCode": 77,
   "minVersionCode": 67
 }
