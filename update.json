@@ -1,8 +1,8 @@
 {
   "minSupportedVersion": "1.9-Aurora-62",
-  "latestVersion": "1.9-Aurora-65",
+  "latestVersion": "1.9-Aurora-66",
   "downloadUrl": "https://github.com/Yieyuqwqs/Yieyu-Update/releases/latest",
-  "message": "授权新增必填 QQ 号：填一次，以后换手机也要填同一个 QQ；被封禁的 QQ 换设备同样无法使用。",
-  "versionCode": 70,
+  "message": "新增授权申请与人工审核：填 QQ → 核对头像 → 生成申请码发管理员；管理员通过后才能绑定指纹。",
+  "versionCode": 71,
   "minVersionCode": 67
 }
