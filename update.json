@@ -1,8 +1,8 @@
 {
   "minSupportedVersion": "1.9-Aurora-62",
-  "latestVersion": "1.9-Aurora-74",
+  "latestVersion": "1.9-Aurora-75",
   "downloadUrl": "https://github.com/Yieyuqwqs/Yieyu-Update/releases/latest",
-  "message": "修存储读旧值、音源探测卡顿、切歌不取消旧请求；启动更快、内存更省。",
-  "versionCode": 79,
+  "message": "报错说人话：换源/搜索失败会显示每个音源的真实原因；下载目录回退不再静默。",
+  "versionCode": 80,
   "minVersionCode": 67
 }
