@@ -1,8 +1,8 @@
 {
   "minSupportedVersion": "1.9-Aurora-62",
-  "latestVersion": "1.9-Aurora-78",
+  "latestVersion": "1.9-Aurora-79",
   "downloadUrl": "https://github.com/Yieyuqwqs/Yieyu-Update/releases/latest",
-  "message": "正式包裁掉 console.log（warn/error 保留）；修恢复播放时「启动自动播放」不生效。",
-  "versionCode": 83,
+  "message": "音源鉴权改走 X-LxM-Auth 请求头：密钥不再进 URL；/api/v0 前缀只补一次。",
+  "versionCode": 84,
   "minVersionCode": 67
 }
