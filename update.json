@@ -1,8 +1,8 @@
 {
   "minSupportedVersion": "1.9-Aurora-62",
-  "latestVersion": "1.9-Aurora-81",
+  "latestVersion": "1.9-Aurora-82",
   "downloadUrl": "https://github.com/Yieyuqwqs/Yieyu-Update/releases/latest",
-  "message": "按网关文档对齐：鉴权头 X-Request-Key、music id 走 mid 规范化、成功码 0/200 都认。",
-  "versionCode": 86,
+  "message": "修可视化「卡一下就消失且不恢复」：取帧加超时 + 重渲染后重贴柱高；不显示时给出原因。",
+  "versionCode": 87,
   "minVersionCode": 67
 }
