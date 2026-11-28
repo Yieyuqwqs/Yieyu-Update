@@ -1,8 +1,8 @@
 {
   "minSupportedVersion": "1.9-Aurora-62",
-  "latestVersion": "1.9-Aurora-80",
+  "latestVersion": "1.9-Aurora-81",
   "downloadUrl": "https://github.com/Yieyuqwqs/Yieyu-Update/releases/latest",
-  "message": "修「解析成功却不出声」：错误占位音频 error.mp3 不再被当直链；错误分类更准（换源/降档）。",
-  "versionCode": 85,
+  "message": "按网关文档对齐：鉴权头 X-Request-Key、music id 走 mid 规范化、成功码 0/200 都认。",
+  "versionCode": 86,
   "minVersionCode": 67
 }
