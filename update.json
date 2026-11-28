@@ -1,8 +1,8 @@
 {
   "minSupportedVersion": "1.9-Aurora-62",
-  "latestVersion": "1.9-Aurora-79",
+  "latestVersion": "1.9-Aurora-80",
   "downloadUrl": "https://github.com/Yieyuqwqs/Yieyu-Update/releases/latest",
-  "message": "音源鉴权改走 X-LxM-Auth 请求头：密钥不再进 URL；/api/v0 前缀只补一次。",
-  "versionCode": 84,
+  "message": "修「解析成功却不出声」：错误占位音频 error.mp3 不再被当直链；错误分类更准（换源/降档）。",
+  "versionCode": 85,
   "minVersionCode": 67
 }
